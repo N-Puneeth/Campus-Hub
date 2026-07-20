@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Configure the custom font for Tailwind v4 */
+@layer base {
+  :root {
+    --font-sans: "Inter", sans-serif;
+    --color-primary: #4F46E5;
+  }
+}
+
+body {
+  background-color: #f8fafc; /* bg-slate-50 */
+  color: #0f172a; /* text-slate-900 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom React Calendar Overrides */
+.custom-calendar-wrapper .react-calendar {
+  width: 100%;
+  border: none;
+  font-family: inherit;
+}
+.react-calendar__navigation button {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0f172a;
+  border-radius: 0.5rem;
+}
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f1f5f9;
+}
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #64748b;
+  font-size: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+.react-calendar__tile {
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+}
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: #f1f5f9;
+}
+.react-calendar__tile--now {
+  background: #e0e7ff !important;
+  color: #4f46e5;
+  font-weight: bold;
+}
+.react-calendar__tile--active {
+  background: #4f46e5 !important;
+  color: white !important;
+}
