@@ -13,9 +13,9 @@ const HeroBanner = () => {
       {/* Illustration Image */}
       <div className="absolute right-0 bottom-0 h-full w-2/3 md:w-1/2 flex justify-end overflow-hidden rounded-br-[2rem]">
         <img 
-          src="/src/assets/images/campus-illustration.png" 
-          alt="Campus Buildings" 
-          className="h-[120%] md:h-[130%] w-auto object-cover object-right-bottom opacity-90 mix-blend-multiply translate-y-2 md:translate-y-4 translate-x-2"
+          src="/campus-illustration.png" 
+          alt="Campus Building" 
+          className="w-full h-full object-cover rounded-3xl"
         />
       </div>
     </div>
