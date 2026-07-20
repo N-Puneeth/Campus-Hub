@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Replace 5000 with your actual backend port
-const API_URL = 'https://campus-hub-6t52.onrender.com';
+const API_URL = 'https://campus-hub-xq0x.onrender.com';
 
 export const api = axios.create({
   baseURL: API_URL,
