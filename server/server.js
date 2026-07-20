@@ -21,7 +21,11 @@ const app = express();
 // 4. Middleware (Defined exactly once)
 app.use(
     cors({
-        origin: "http://localhost:5173", // Securely allows only your React frontend
+        origin: [
+            "http://localhost:5173", // Keep this so you can still test locally
+            "https://campus-hub-tau-one.vercel.app" // Add your live URL here
+        ],
+        credentials: true
     })
 );
 app.use(express.json());
