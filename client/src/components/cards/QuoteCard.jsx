@@ -38,13 +38,6 @@ const QuoteCard = () => {
          </div>
       </div>
       
-      {/* Optional: You can link this button to an admin page later to add more quotes */}
-      <button className="flex flex-col items-center justify-center gap-1.5 text-purple-600 transition-transform hover:scale-105 active:scale-95">
-        <div className="bg-white p-2.5 rounded-xl shadow-sm border border-purple-100">
-          <Edit3 className="w-4 h-4" />
-        </div>
-        <span className="text-[10px] font-semibold whitespace-nowrap">Update Quote</span>
-      </button>
     </div>
   );
 };
