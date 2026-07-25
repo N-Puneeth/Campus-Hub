@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 // Make sure this path is correct for your PageHeader component
 import PageHeader from "../components/layout/PageHeader"; 
 import { Coffee, Sun, Moon, Utensils } from "lucide-react";
-import api from "../../services/api"; // Verify your API path
+import api from "../services/api"; // Verify your API path
 
 const MealCard = ({ type, time, items, icon: Icon, iconColor, iconBg }) => (
   <div className="bg-white p-5 rounded-[1.5rem] shadow-sm border border-slate-100 flex items-start gap-4">
