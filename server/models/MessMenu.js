@@ -7,19 +7,23 @@ const messMenuSchema = new mongoose.Schema({
     },
     weekType: {
         type: String,
-        enum: ['odd', 'even', 'both'], 
-        default: 'both' // Use 'both' if the menu is the same every week
+        enum: ['Odd', 'Even', 'Both', 'odd', 'even', 'both'], // Updated to accept capitalized versions
+        default: 'Both'
     },
     breakfast: {
-        type: String,
+        type: [String], // Updated to Array of Strings
         required: true
     },
     lunch: {
-        type: String,
+        type: [String], // Updated to Array of Strings
+        required: true
+    },
+    snacks: {           // Added missing snacks field
+        type: [String],
         required: true
     },
     dinner: {
-        type: String,
+        type: [String], // Updated to Array of Strings
         required: true
     }
 });
