@@ -28,12 +28,16 @@ const MessMenu = () => {
   const days = ["Yesterday", "Today", "Tomorrow"];
 
   // 1. Get week type (Even or Odd) matching your DB casing
+  // 1. Bulletproof Week Calculator
   const getWeekType = () => {
-    const currentDate = new Date();
-    const startDate = new Date(currentDate.getFullYear(), 0, 1);
-    const days = Math.floor((currentDate - startDate) / (24 * 60 * 60 * 1000));
-    const weekNumber = Math.ceil(days / 7);
-    return weekNumber % 2 === 0 ? "Even" : "Odd"; 
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 1);
+    const current = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    
+    const pastDays = Math.floor((current - start) / 86400000);
+    const weekNumber = Math.ceil((pastDays + start.getDay() + 1) / 7);
+    
+    return weekNumber % 2 === 0 ? "Even" : "Odd";
   };
 
   // 2. Helper to figure out the actual day name based on the button clicked

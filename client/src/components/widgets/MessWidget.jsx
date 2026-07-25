@@ -15,26 +15,32 @@ const MessWidget = () => {
   const dayName = today.toLocaleDateString('en-US', { weekday: 'long' }); 
 
   // 2. Helper function to calculate if current week is even or odd
+// 1. Bulletproof Week Calculator
   const getWeekType = () => {
-    const firstDayOfYear = new Date(today.getFullYear(), 0, 1);
-    const pastDaysOfYear = (today - firstDayOfYear) / 86400000;
-    const weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+    const now = new Date();
+    // Reset to midnight to prevent time-of-day decimal errors
+    const start = new Date(now.getFullYear(), 0, 1);
+    const current = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     
-    return weekNumber % 2 === 0 ? "even" : "odd";
+    const pastDays = Math.floor((current - start) / 86400000);
+    // Adjusts for what day of the week Jan 1st falls on
+    const weekNumber = Math.ceil((pastDays + start.getDay() + 1) / 7);
+    
+    return weekNumber % 2 === 0 ? "Even" : "Odd";
   };
 
   useEffect(() => {
     const fetchMess = async () => {
       try {
         setIsLoading(true);
-        const weekType = getWeekType();
-        setCurrentWeekType(weekType); // Save to state so we can display it on the UI
+        const weekType = getWeekType(); // Now returns Capitalized "Even" or "Odd"
+        setCurrentWeekType(weekType); 
 
         const response = await api.get('/mess');
         
-        // 3. Filter by BOTH the current day AND the current week type
+        // 2. FIXED: Added .toLowerCase() to make matching case-insensitive
         const todaysMenu = response.data.find(m => 
-          m.day === dayName && (m.weekType === weekType || m.weekType === 'both')
+          m.day === dayName && (m.weekType.toLowerCase() === weekType.toLowerCase() || m.weekType.toLowerCase() === 'both')
         );
         
         setMenu(todaysMenu || response.data[0]); 
