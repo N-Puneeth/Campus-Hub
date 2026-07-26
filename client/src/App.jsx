@@ -8,7 +8,7 @@ import Cgpa from "./pages/Cgpa";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 
 // A simple placeholder component for the pages we haven't built yet 
 // so the app doesn't crash when you click the sidebar links!
