@@ -20,7 +20,8 @@ const Placeholder = ({ title }) => (
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+      <BrowserRouter>
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
@@ -30,7 +31,6 @@ function App() {
           <Route path="/cgpa" element={<Cgpa />} />
           <Route path="/about" element={<Placeholder title="About Campus" />} />
           <Route path="/contact" element={<Placeholder title="Contact" />} />
-          <Route path="/admin" element={<Admin />} />
           {/* Public Routes */}
           <Route path="/login" element={<Login />} />
 
@@ -45,7 +45,9 @@ function App() {
           />
         </Route>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+      <Analytics />
+    </>
   );
 }
 
