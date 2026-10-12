@@ -69,10 +69,10 @@ const Sidebar = () => {
              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M14.017 21L16.415 14.282C16.415 14.282 16.592 13.916 16.711 13.565C16.829 13.214 16.929 12.87 17.012 12.535C17.095 12.2 17.16 11.859 17.208 11.512C17.255 11.165 17.279 10.824 17.279 10.49V3H24V10.49C24 12.296 23.633 13.957 22.898 15.474C22.164 16.99 21.05 18.232 19.558 19.199C18.065 20.165 16.219 20.766 14.017 21ZM3 21L5.398 14.282C5.398 14.282 5.575 13.916 5.694 13.565C5.812 13.214 5.912 12.87 5.995 12.535C6.078 12.2 6.143 11.859 6.19 11.512C6.238 11.165 6.262 10.824 6.262 10.49V3H12.983V10.49C12.983 12.296 12.616 13.957 11.881 15.474C11.147 16.99 10.033 18.232 8.54 19.199C7.048 20.165 5.201 20.766 3 21Z"/></svg>
           </div>
           <p className="text-sm text-slate-600 font-medium leading-relaxed mb-4">
-            Stay focused, keep learning, and never stop growing.
+            Where there is a will there is a way.
           </p>
           <p className="text-xs font-semibold text-indigo-600 flex items-center gap-1">
-            Have a great day! <span className="text-base">🚀</span>
+            - Bolla Yadav <span className="text-base">🚀</span>
           </p>
         </div>
       </div>
